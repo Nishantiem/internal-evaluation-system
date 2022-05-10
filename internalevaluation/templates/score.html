@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+
+{% load static %}
+
+{% block title %}  SCORE {% endblock %}
+
+{% block stylesheet %}
+	<style>
+        body 
+        {
+            background-color: azure;
+        }
+        .container h1
+        {
+            text-align: center;
+        }
+        .container
+        {
+            margin-top: 10%;
+        }
+        header
+        {
+            display: flex;
+            justify-content: space-between;
+            font-size: 30px;
+            background: #fceeef;
+            padding: 0px 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <a href="http://localhost:8000/profile">My Profile</a>
+        <a href="http://localhost:8000">Logout</a>
+    </header>
+    <div class="container">
+		<h1>Thank you for appearing for the test.</h1>
+		<h1>Your response have been submitted successfully.</h1>
+        <!--<h1>Your Score : {{ Score }}</h1>-->
+    </div>
+{% endblock %}

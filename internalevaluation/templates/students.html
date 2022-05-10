@@ -1,0 +1,72 @@
+{% extends 'common.html' %}
+
+{% load static %}
+
+{% block title %} Admin Portal  {% endblock %}
+
+{% block stylesheet %}
+
+    
+<style>
+    table, th, td 
+    {
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    table
+    {
+        position: absolute;
+        
+        top: 80px;
+        font-size: x-large;
+        
+        width: 50%;
+    }
+    th:nth-child(1)
+    {
+        width: 13%;
+    }
+    th:nth-child(2)
+    {
+        width: 35%;
+    }
+    th:nth-child(3){
+        width: 29%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+    <h1>Students</h1>
+
+    <br>
+
+    <table>
+
+        <tr>
+
+            <th> Name </th>
+            <th> Mobile </th>
+            <th> Email </th>
+
+        </tr>
+
+        {% for S in Students %}
+
+            <tr>
+
+                <td> {{ S.name }}   </td>
+                <td> {{ S.mobile }} </td>
+                <td> {{ S.email }}  </td>
+
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+
+{% endblock %}
