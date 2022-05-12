@@ -10,34 +10,36 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
     #nameInput {
-        background-image: url('/css/searchicon.png');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
         width: 100%;
         font-size: 16px;
         padding: 12px 20px 12px 40px;
-        border: 1px solid #ddd;
-        margin-bottom: 12px;
+        border: 0px solid #ddd;
+		color: black;
+		background: #a8af8685;
+		border-radius: 0;
+		margin: 10px 0;
     }
     #scoreInput {
-        background-image: url('/css/searchicon.png');
-        background-position: 10px 10px;
         background-repeat: no-repeat;
         width: 100%;
         font-size: 16px;
         padding: 12px 20px 12px 40px;
-        border: 1px solid #ddd;
-        margin-bottom: 12px;
+        border: 0px solid #ddd;
+		color: black;
+		background: #a8af8685;
+		border-radius: 0;
+		margin: 10px 0;
+		margin-bottom: 20px;
     }
     #subjectInput {
-        background-image: url('/css/searchicon.png');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
         width: 100%;
         font-size: 16px;
         padding: 12px 20px 12px 40px;
-        border: 1px solid #ddd;
-        margin-bottom: 12px;
+        border: 0px solid #ddd;
+		color: black;
+		background: #a8af8685;
+		border-radius: 0;
+		margin: 10px 0;
     }
     table, th, td 
     {
@@ -47,11 +49,9 @@
     }
     table
     {
-        position: absolute;
-        top: 300px;
         font-size: x-large;
-        width: 50%;
-        margin-left: 300px;
+        width: 65%;
+        margin: 10px auto;
         column-width: 50px;
     }
     th:nth-child(1)
@@ -65,6 +65,10 @@
     th:nth-child(3){
         width: 19%;
     }
+	.invisible
+	{
+		display: none;
+	}
 </style>
 {% endblock %}
 
@@ -87,7 +91,7 @@
 </button>
 </center>
 <table>
-    
+    <thead>
     <tr>
         <th >Student Name </th>
         <th> Subject        </th>
@@ -95,6 +99,7 @@
         <th> Date           </th>
         
     </tr>
+	</thead>
     <tbody id="myTable">
         {% for R in Results %}
         
@@ -139,9 +144,9 @@
                 if ((nameValue.toUpperCase().indexOf(filter1) > -1) &&
                 (subjectValue.toUpperCase().indexOf(filter2) > -1) &&
                 (a>=b)){
-                    tr[i].style.display = "";
+					tr[i].classList.remove("invisible");
                 } else {
-                    tr[i].style.display = "none";
+                    tr[i].classList.add("invisible");
                 }
             }
         }
